@@ -58,7 +58,7 @@ public class Laboratory {
 			Date start = new Date();
 			System.out.println("START: " +start);
 			for(ExecutionThread execution: executions){
-				execution.setConfig(time, initialDate);
+				execution.setConfig(time, tempDate);
 				execution.start();
 			}
 			for(ExecutionThread execution: executions)execution.join();
