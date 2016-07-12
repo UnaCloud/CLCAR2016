@@ -10,7 +10,7 @@ import uniandes.comit.entities.Variables;
 
 public class Init {
 	
-	private static String initialDate = "2015-10-19 00:00:00:000";
+	private static String initialDate = "2015-10-21 00:00:00:000";
 	private static String endDate = "2015-11-16 00:00:00:000";
 	//private static String endDate = "2015-10-20 00:00:00:000";
 	private static int[] timeRange = {1,15,30};	
@@ -37,7 +37,7 @@ public class Init {
 		File folder = new File("results");
 		folder.mkdir();		
 		for(int time: timeRange){
-			Laboratory waira1 = new Laboratory(10);
+			Laboratory waira1 = new Laboratory(15);
 			File folderTime = new File("results/range_"+time);
 			folderTime.mkdir();
 			waira1.fillLab(df.parse(initialDate), df.parse(endDate), time);	
