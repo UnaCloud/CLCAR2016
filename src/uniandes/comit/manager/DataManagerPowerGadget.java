@@ -25,15 +25,15 @@ public class DataManagerPowerGadget extends AbstractManager{
 	
 	@Override
 	public void fillData(TreeMap<Date, MachineData> data, String day,
-			String machine, int time) throws IOException, ParseException {
+			String machine) throws IOException, ParseException {
 		dateFile = day;
 		//String[] dateParts = dateFile.split("-");
 		//dateFile = dateParts[1]+"/"+dateParts[2]+"/"+dateParts[0];
-		super.fillData(data, day, machine, time);
+		super.fillData(data, day, machine);
 	}
 
 	@Override
-	protected void calculateDataByFle(File file,TreeMap<Date, MachineData> machineData, int time)
+	protected void calculateDataByFle(File file,TreeMap<Date, MachineData> machineData)
 			throws IOException, ParseException {
 	
 		BufferedReader bf = new BufferedReader(new FileReader(file));

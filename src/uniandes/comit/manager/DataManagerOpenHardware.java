@@ -22,7 +22,7 @@ public class DataManagerOpenHardware extends AbstractManager{
 	}
 	
 	@Override
-	protected void calculateDataByFle(File file, TreeMap<Date, MachineData> machineData, int time)	throws IOException, ParseException {
+	protected void calculateDataByFle(File file, TreeMap<Date, MachineData> machineData)	throws IOException, ParseException {
 		
 		BufferedReader bf = new BufferedReader(new FileReader(file));
 		String line = null;

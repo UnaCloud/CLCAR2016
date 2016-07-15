@@ -5,15 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 import uniandes.comit.entities.Laboratory;
-import uniandes.comit.entities.Variables;
-
 
 public class Init {
 	
 	private static String initialDate = "2015-10-19 00:00:00:000";
 	private static String endDate = "2015-11-16 00:00:00:000";
 	//private static String endDate = "2015-10-20 00:00:00:000";
-	private static int[] timeRange = {1,15,30};	
+	private static int[] timeRange = {15,30,60};	
+		//,15,30};	
 
 	public SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS", Locale.US);
 	

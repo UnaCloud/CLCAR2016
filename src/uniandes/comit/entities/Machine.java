@@ -31,7 +31,8 @@ public class Machine {
 		
 		Date flag = new Date();
 		String initDate = (dayDate.getYear()+1900)+"-"+((dayDate.getMonth()+1)>9?(dayDate.getMonth()+1):"0"+(dayDate.getMonth()+1))+"-"+(dayDate.getDate()<10?"0"+dayDate.getDate():dayDate.getDate());
-		Date dInitDate = df.parse(initDate+" 07:01:00:000");
+		Date dInitDate = df.parse(initDate+" 07:00:00:000");
+		dInitDate.setTime(dInitDate.getTime()+(1000*time*60));
 		Date dEndDate = df.parse(initDate+" 22:00:01:000");
 		
 		TreeMap<Date, MachineData> dataTemp = new TreeMap<Date, MachineData>();
@@ -71,10 +72,10 @@ public class Machine {
 		DataManagerSigar sigarManager = new DataManagerSigar();
 				
 	
-		ohManager.fillData(dataTemp, initDate, name, time);
-		perfManager.fillData(dataTemp, initDate, name, time);
-		pgManager.fillData(dataTemp, initDate, name, time);
-		sigarManager.fillData(dataTemp, initDate, name, time);
+		ohManager.fillData(dataTemp, initDate, name);
+		perfManager.fillData(dataTemp, initDate, name);
+		pgManager.fillData(dataTemp, initDate, name);
+		sigarManager.fillData(dataTemp, initDate, name);
 		Date flag2 = new Date();
 		System.out.println(name+" read millis: "+(flag2.getTime()-flag.getTime()));
 		try {				

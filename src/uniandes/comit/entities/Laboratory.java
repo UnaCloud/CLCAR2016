@@ -77,7 +77,8 @@ public class Laboratory {
 			machines.addAll(execution.getMachines());
 		
 		String date = (dayDate.getYear()+1900)+"-"+((dayDate.getMonth()+1)>9?(dayDate.getMonth()+1):"0"+(dayDate.getMonth()+1))+"-"+(dayDate.getDate()<10?"0"+dayDate.getDate():dayDate.getDate());
-		Date dInitDate = df.parse(date+" 07:01:00:000");
+		Date dInitDate = df.parse(date+" 07:00:00:000");
+		dInitDate.setTime(dInitDate.getTime()+(1000*time*60));
 		Date dEndDate = df.parse(date+" 22:00:01:000");
 		
 		TreeMap<Date, MachineData> dataTemp = new TreeMap<Date, MachineData>();				

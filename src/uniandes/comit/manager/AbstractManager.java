@@ -16,7 +16,7 @@ public abstract class AbstractManager {
 		this.name = nName;//openHardware
 	}
 	
-	public void fillData(TreeMap<Date, MachineData> data, String day, String machine, int time) throws IOException, ParseException{
+	public void fillData(TreeMap<Date, MachineData> data, String day, String machine) throws IOException, ParseException{
 		
 		File folder = new File("Z:\\Monitoreo\\UnaCloudMonitor\\"+day+"\\"+machine+"\\"+name);
 		
@@ -31,7 +31,7 @@ public abstract class AbstractManager {
 		}
 		for(File file: cleanFiles.values()){
 			try {
-				calculateDataByFle(file,data, time);	
+				calculateDataByFle(file,data);	
 			} catch (ParseException e) {
 				System.err.println(machine+"-"+file);
 				throw e;
@@ -42,5 +42,5 @@ public abstract class AbstractManager {
 //		}
 	}
 	
-	protected abstract void calculateDataByFle(File file,  TreeMap<Date,MachineData> machineData, int time) throws IOException, ParseException;
+	protected abstract void calculateDataByFle(File file,  TreeMap<Date,MachineData> machineData) throws IOException, ParseException;
 }

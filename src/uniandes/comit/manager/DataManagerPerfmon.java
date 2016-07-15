@@ -23,7 +23,7 @@ public class DataManagerPerfmon extends AbstractManager{
 	}
 
 	@Override
-	protected void calculateDataByFle(File file,TreeMap<Date, MachineData> machineData, int time)
+	protected void calculateDataByFle(File file,TreeMap<Date, MachineData> machineData)
 			throws IOException, ParseException {
 				
 		BufferedReader bf = new BufferedReader(new FileReader(file));
